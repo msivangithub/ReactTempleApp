@@ -1,0 +1,2080 @@
+{
+  "settings": {
+    "appName": "Temple Seva Booking System",
+    "tagline": "Seva booking & temple administration",
+    "bookingNumberPrefix": "BK",
+    "memberNumberPrefix": "MEM",
+    "fallbackTokenPrefix": "TK",
+    "currencySymbol": "₹",
+    "locale": "en-IN",
+    "timeZone": "Asia/Kolkata",
+    "sessionExpiry": "12h",
+    "mobilePattern": "^\\d{10}$",
+    "maxQuantity": 99
+  },
+  "locations": [
+    {
+      "LocationId": 1,
+      "LocationName": "Uttara Tirupati",
+      "LocationCode": "UTP",
+      "Description": "Uttara Tirupati Kshetram — main pilgrimage complex",
+      "Address": "Uttara Tirupati, Hyderabad, Telangana",
+      "Phone": "+91 40 2345 6789",
+      "Email": "uttaratirupati@example.org",
+      "ReceiptFooter": "Om Namo Venkatesaya — may the blessings of Lord Venkateswara be with you.",
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "LocationId": 2,
+      "LocationName": "Tirupati Balaji",
+      "LocationCode": "TPT",
+      "Description": "Sri Venkateswara Swamy Temple, Tirupati",
+      "Address": "Tirumala, Tirupati, Andhra Pradesh",
+      "Phone": "+91 877 227 7777",
+      "Email": "tirupati@example.org",
+      "ReceiptFooter": "Govinda Govinda — thank you for your offering.",
+      "IsActive": true,
+      "DisplayOrder": 2
+    },
+    {
+      "LocationId": 3,
+      "LocationName": "Srisailam",
+      "LocationCode": "SSM",
+      "Description": "Sri Mallikarjuna Swamy Temple, Srisailam",
+      "Address": "Srisailam, Nandyal, Andhra Pradesh",
+      "Phone": "+91 8524 288 888",
+      "Email": "srisailam@example.org",
+      "ReceiptFooter": "Om Namah Shivaya — may Lord Mallikarjuna bless you.",
+      "IsActive": true,
+      "DisplayOrder": 3
+    }
+  ],
+  "roles": [
+    {
+      "RoleId": 1,
+      "RoleName": "SuperAdmin",
+      "Description": "Full system access",
+      "IsActive": true,
+      "IsSuperAdmin": true
+    },
+    {
+      "RoleId": 2,
+      "RoleName": "Admin",
+      "Description": "Manage temples, sevas, users",
+      "IsActive": true,
+      "IsSuperAdmin": false
+    },
+    {
+      "RoleId": 3,
+      "RoleName": "Operator",
+      "Description": "Counter booking operations",
+      "IsActive": true,
+      "IsSuperAdmin": false
+    },
+    {
+      "RoleId": 4,
+      "RoleName": "Viewer",
+      "Description": "Read-only reports & dashboard",
+      "IsActive": true,
+      "IsSuperAdmin": false
+    }
+  ],
+  "screens": [
+    {
+      "ScreenId": 1,
+      "ScreenKey": "overview",
+      "ScreenName": "Overview",
+      "ScreenGroup": "Operations",
+      "DisplayOrder": 1,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 2,
+      "ScreenKey": "seva_booking",
+      "ScreenName": "Seva Booking",
+      "ScreenGroup": "Operations",
+      "DisplayOrder": 2,
+      "IsActive": true,
+      "IsBookingScreen": true
+    },
+    {
+      "ScreenId": 20,
+      "ScreenKey": "laddu_booking",
+      "ScreenName": "Laddu Booking",
+      "ScreenGroup": "Operations",
+      "IsActive": true,
+      "DisplayOrder": 3,
+      "IsBookingScreen": true
+    },
+    {
+      "ScreenId": 21,
+      "ScreenKey": "goshala_tickets",
+      "ScreenName": "Goshala Tickets",
+      "ScreenGroup": "Operations",
+      "IsActive": true,
+      "DisplayOrder": 4,
+      "IsBookingScreen": true
+    },
+    {
+      "ScreenId": 22,
+      "ScreenKey": "advance_booking",
+      "ScreenName": "Advance Booking",
+      "ScreenGroup": "Operations",
+      "IsActive": true,
+      "DisplayOrder": 5
+    },
+    {
+      "ScreenId": 3,
+      "ScreenKey": "bookings",
+      "ScreenName": "Bookings",
+      "ScreenGroup": "Operations",
+      "DisplayOrder": 6,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 4,
+      "ScreenKey": "lifetime_members",
+      "ScreenName": "Lifetime Members",
+      "ScreenGroup": "Operations",
+      "DisplayOrder": 7,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 5,
+      "ScreenKey": "reports",
+      "ScreenName": "Reports",
+      "ScreenGroup": "Reports",
+      "DisplayOrder": 8,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 6,
+      "ScreenKey": "locations",
+      "ScreenName": "Locations",
+      "ScreenGroup": "Administration",
+      "DisplayOrder": 9,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 7,
+      "ScreenKey": "temple_mgmt",
+      "ScreenName": "Temples",
+      "ScreenGroup": "Administration",
+      "DisplayOrder": 10,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 8,
+      "ScreenKey": "deity_mgmt",
+      "ScreenName": "Deities",
+      "ScreenGroup": "Administration",
+      "DisplayOrder": 11,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 9,
+      "ScreenKey": "seva_master",
+      "ScreenName": "Seva Master",
+      "ScreenGroup": "Administration",
+      "DisplayOrder": 12,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 23,
+      "ScreenKey": "item_master",
+      "ScreenName": "Item Master",
+      "ScreenGroup": "Administration",
+      "IsActive": true,
+      "DisplayOrder": 13
+    },
+    {
+      "ScreenId": 10,
+      "ScreenKey": "seva_categories",
+      "ScreenName": "Seva Categories",
+      "ScreenGroup": "Administration",
+      "DisplayOrder": 14,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 11,
+      "ScreenKey": "counters",
+      "ScreenName": "Counters",
+      "ScreenGroup": "Administration",
+      "DisplayOrder": 15,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 12,
+      "ScreenKey": "user_mgmt",
+      "ScreenName": "User Management",
+      "ScreenGroup": "Administration",
+      "DisplayOrder": 16,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 13,
+      "ScreenKey": "screen_allocation",
+      "ScreenName": "Screen Allocation",
+      "ScreenGroup": "Administration",
+      "DisplayOrder": 17,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 14,
+      "ScreenKey": "booking_types",
+      "ScreenName": "Booking Types",
+      "ScreenGroup": "Masters",
+      "DisplayOrder": 18,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 15,
+      "ScreenKey": "payment_modes",
+      "ScreenName": "Payment Modes",
+      "ScreenGroup": "Masters",
+      "DisplayOrder": 19,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 16,
+      "ScreenKey": "booking_statuses",
+      "ScreenName": "Booking Statuses",
+      "ScreenGroup": "Masters",
+      "DisplayOrder": 20,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 17,
+      "ScreenKey": "time_slots",
+      "ScreenName": "Seva Time Slots",
+      "ScreenGroup": "Masters",
+      "DisplayOrder": 21,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 18,
+      "ScreenKey": "member_frequencies",
+      "ScreenName": "Member Frequencies",
+      "ScreenGroup": "Masters",
+      "DisplayOrder": 22,
+      "IsActive": true
+    },
+    {
+      "ScreenId": 19,
+      "ScreenKey": "member_statuses",
+      "ScreenName": "Member Statuses",
+      "ScreenGroup": "Masters",
+      "DisplayOrder": 23,
+      "IsActive": true
+    }
+  ],
+  "permissions": [
+    {
+      "RoleId": 1,
+      "ScreenId": 1,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 2,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 3,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 4,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 5,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 6,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 7,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 8,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 9,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 10,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 11,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 12,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 13,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 14,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 15,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 16,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 17,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 18,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 19,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 1,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 2,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 3,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 4,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 5,
+      "CanView": true,
+      "CanCreate": false,
+      "CanEdit": false,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 6,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 7,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 8,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 9,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 10,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 11,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 12,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 13,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 14,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 15,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 16,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 17,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 18,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 19,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 3,
+      "ScreenId": 1,
+      "CanView": true,
+      "CanCreate": false,
+      "CanEdit": false,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 3,
+      "ScreenId": 2,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 3,
+      "ScreenId": 3,
+      "CanView": true,
+      "CanCreate": false,
+      "CanEdit": true,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 3,
+      "ScreenId": 4,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 3,
+      "ScreenId": 5,
+      "CanView": true,
+      "CanCreate": false,
+      "CanEdit": false,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 4,
+      "ScreenId": 1,
+      "CanView": true,
+      "CanCreate": false,
+      "CanEdit": false,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 4,
+      "ScreenId": 3,
+      "CanView": true,
+      "CanCreate": false,
+      "CanEdit": false,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 4,
+      "ScreenId": 5,
+      "CanView": true,
+      "CanCreate": false,
+      "CanEdit": false,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 20,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 21,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 22,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 1,
+      "ScreenId": 23,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 20,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 21,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 22,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 2,
+      "ScreenId": 23,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": true
+    },
+    {
+      "RoleId": 3,
+      "ScreenId": 20,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 3,
+      "ScreenId": 21,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": false
+    },
+    {
+      "RoleId": 3,
+      "ScreenId": 22,
+      "CanView": true,
+      "CanCreate": true,
+      "CanEdit": true,
+      "CanDelete": false
+    }
+  ],
+  "users": [
+    {
+      "UserId": 1,
+      "Username": "admin",
+      "Password": "admin123",
+      "FullName": "System Administrator",
+      "Mobile": "9999999999",
+      "Email": "admin@example.org",
+      "RoleId": 1,
+      "IsActive": true,
+      "LocationIds": [],
+      "AllLocations": true
+    },
+    {
+      "UserId": 2,
+      "Username": "operator",
+      "Password": "operator123",
+      "FullName": "Counter Operator",
+      "Mobile": "9888888888",
+      "Email": "operator@example.org",
+      "RoleId": 3,
+      "IsActive": true,
+      "LocationIds": [
+        1
+      ],
+      "AllLocations": false
+    },
+    {
+      "UserId": 3,
+      "Username": "viewer",
+      "Password": "viewer123",
+      "FullName": "Report Viewer",
+      "Mobile": "9777777777",
+      "Email": "viewer@example.org",
+      "RoleId": 4,
+      "IsActive": true,
+      "LocationIds": [],
+      "AllLocations": true
+    },
+    {
+      "UserId": 4,
+      "Username": "manager",
+      "Password": "manager123",
+      "FullName": "Temple Manager",
+      "Mobile": "9666666666",
+      "Email": "manager@example.org",
+      "RoleId": 2,
+      "IsActive": true,
+      "LocationIds": [
+        1,
+        2
+      ],
+      "AllLocations": false
+    }
+  ],
+  "temples": [
+    {
+      "TempleId": 1,
+      "LocationId": 1,
+      "TempleName": "Venkateshwara Swami",
+      "Description": "Main temple",
+      "Address": "",
+      "IsMainTemple": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "TempleId": 2,
+      "LocationId": 1,
+      "TempleName": "General",
+      "Description": "General temple services",
+      "Address": "",
+      "IsMainTemple": false,
+      "IsActive": true,
+      "DisplayOrder": 2
+    },
+    {
+      "TempleId": 3,
+      "LocationId": 1,
+      "TempleName": "Dattatreya Swami",
+      "Description": "",
+      "Address": "",
+      "IsMainTemple": false,
+      "IsActive": true,
+      "DisplayOrder": 3
+    },
+    {
+      "TempleId": 4,
+      "LocationId": 1,
+      "TempleName": "Anjaneya Swami",
+      "Description": "",
+      "Address": "",
+      "IsMainTemple": false,
+      "IsActive": true,
+      "DisplayOrder": 4
+    },
+    {
+      "TempleId": 5,
+      "LocationId": 1,
+      "TempleName": "Padmavathi Ammavaru",
+      "Description": "",
+      "Address": "",
+      "IsMainTemple": false,
+      "IsActive": true,
+      "DisplayOrder": 5
+    },
+    {
+      "TempleId": 6,
+      "LocationId": 1,
+      "TempleName": "Lord Shiva",
+      "Description": "",
+      "Address": "",
+      "IsMainTemple": false,
+      "IsActive": true,
+      "DisplayOrder": 6
+    },
+    {
+      "TempleId": 7,
+      "LocationId": 1,
+      "TempleName": "Ganapathi",
+      "Description": "",
+      "Address": "",
+      "IsMainTemple": false,
+      "IsActive": true,
+      "DisplayOrder": 7
+    },
+    {
+      "TempleId": 8,
+      "LocationId": 2,
+      "TempleName": "Sri Venkateswara Swamy",
+      "Description": "Tirumala Balaji Temple",
+      "Address": "Tirumala",
+      "IsMainTemple": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "TempleId": 9,
+      "LocationId": 3,
+      "TempleName": "Sri Mallikarjuna Swamy",
+      "Description": "Srisailam Mallikarjuna Temple",
+      "Address": "Srisailam",
+      "IsMainTemple": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    }
+  ],
+  "deities": [
+    {
+      "DeityId": 1,
+      "TempleId": 1,
+      "DeityName": "Sri Venkateshwara Swami",
+      "Description": "Main deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "DeityId": 2,
+      "TempleId": 2,
+      "DeityName": "General Deity",
+      "Description": "General deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "DeityId": 3,
+      "TempleId": 3,
+      "DeityName": "Sri Dattatreya Swami",
+      "Description": "Main deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "DeityId": 4,
+      "TempleId": 4,
+      "DeityName": "Sri Anjaneya Swami",
+      "Description": "Main deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "DeityId": 5,
+      "TempleId": 5,
+      "DeityName": "Sri Padmavathi Ammavaru",
+      "Description": "Main deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "DeityId": 6,
+      "TempleId": 6,
+      "DeityName": "Lord Shiva",
+      "Description": "Main deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "DeityId": 7,
+      "TempleId": 7,
+      "DeityName": "Sri Ganapathi",
+      "Description": "Main deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "DeityId": 8,
+      "TempleId": 8,
+      "DeityName": "Sri Venkateswara Swamy",
+      "Description": "Main deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "DeityId": 9,
+      "TempleId": 9,
+      "DeityName": "Sri Mallikarjuna Swamy",
+      "Description": "Main deity",
+      "IsMainDeity": true,
+      "IsActive": true,
+      "DisplayOrder": 1
+    }
+  ],
+  "sevaCategories": [
+    {
+      "CategoryId": 1,
+      "CategoryName": "Abhishekam",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 2,
+      "CategoryName": "Archana",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 3,
+      "CategoryName": "Alankara",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 4,
+      "CategoryName": "Kalyanam",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 5,
+      "CategoryName": "Homam",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 6,
+      "CategoryName": "Pooja",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 7,
+      "CategoryName": "Vratam",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 8,
+      "CategoryName": "Naivedya",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 9,
+      "CategoryName": "Seva",
+      "IsActive": true
+    },
+    {
+      "CategoryId": 10,
+      "CategoryName": "Other",
+      "IsActive": true
+    }
+  ],
+  "sevas": [
+    {
+      "SevaId": 1,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 1,
+      "SevaName": "Abhishekam Pradhana",
+      "Amount": 2500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 2,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 1,
+      "SevaName": "Abhishekam Samisti",
+      "Amount": 250,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 3,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 3,
+      "SevaName": "Vastra Alankara Seva Pure Silk",
+      "Amount": 42000,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 4,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 3,
+      "SevaName": "Vastra Alankara Seva Cotton",
+      "Amount": 800,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 5,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 8,
+      "SevaName": "Naivedya Seva",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 6,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 2,
+      "SevaName": "Pradhana Archana",
+      "Amount": 100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 7,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 2,
+      "SevaName": "Samisti Archana",
+      "Amount": 30,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 8,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 4,
+      "SevaName": "Kalyanam Pradhana",
+      "Amount": 5000,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 9,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 4,
+      "SevaName": "Kalyanam Samisti",
+      "Amount": 500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 10,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 3,
+      "SevaName": "Chandana Alankara Seva Pradhana",
+      "Amount": 2500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 11,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 10,
+      "SevaName": "Ekanta Seva",
+      "Amount": 100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 12,
+      "TempleId": 1,
+      "DeityId": 1,
+      "CategoryId": 2,
+      "SevaName": "Sahasranama Archana",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 13,
+      "TempleId": 2,
+      "DeityId": 2,
+      "CategoryId": 1,
+      "SevaName": "Bhoovaraha Swami Abhishekam",
+      "Amount": 500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 14,
+      "TempleId": 2,
+      "DeityId": 2,
+      "CategoryId": 7,
+      "SevaName": "Satyanarayana Swami Vratam Pradhana",
+      "Amount": 5000,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 15,
+      "TempleId": 2,
+      "DeityId": 2,
+      "CategoryId": 7,
+      "SevaName": "Satyanarayana Swami Vratam Samisti",
+      "Amount": 500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 16,
+      "TempleId": 2,
+      "DeityId": 2,
+      "CategoryId": 6,
+      "SevaName": "Vahana Pooja 2 Wheeler",
+      "Amount": 500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 17,
+      "TempleId": 2,
+      "DeityId": 2,
+      "CategoryId": 6,
+      "SevaName": "Vahana Pooja 4 Wheeler",
+      "Amount": 1000,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 18,
+      "TempleId": 3,
+      "DeityId": 3,
+      "CategoryId": 1,
+      "SevaName": "Abhishekam Pradhana",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 19,
+      "TempleId": 3,
+      "DeityId": 3,
+      "CategoryId": 7,
+      "SevaName": "Anagha Vratam Pradhana",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 20,
+      "TempleId": 3,
+      "DeityId": 3,
+      "CategoryId": 7,
+      "SevaName": "Anagha Vratam Samisti",
+      "Amount": 150,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 21,
+      "TempleId": 4,
+      "DeityId": 4,
+      "CategoryId": 1,
+      "SevaName": "Abhishekam Pradhana",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 22,
+      "TempleId": 4,
+      "DeityId": 4,
+      "CategoryId": 9,
+      "SevaName": "Vadamalasamarpa Seva",
+      "Amount": 250,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 23,
+      "TempleId": 5,
+      "DeityId": 5,
+      "CategoryId": 1,
+      "SevaName": "Abhishekam Seva Pradhana",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 24,
+      "TempleId": 5,
+      "DeityId": 5,
+      "CategoryId": 2,
+      "SevaName": "Archana",
+      "Amount": 30,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 25,
+      "TempleId": 5,
+      "DeityId": 5,
+      "CategoryId": 2,
+      "SevaName": "Kumkumarchana",
+      "Amount": 100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 26,
+      "TempleId": 6,
+      "DeityId": 6,
+      "CategoryId": 1,
+      "SevaName": "Rudhrabhisekam Pradhana",
+      "Amount": 2500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 27,
+      "TempleId": 6,
+      "DeityId": 6,
+      "CategoryId": 4,
+      "SevaName": "Shiva Parvathi Kalyanam Pradhana",
+      "Amount": 5000,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 28,
+      "TempleId": 7,
+      "DeityId": 7,
+      "CategoryId": 1,
+      "SevaName": "Abhishekam Pradhana",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 29,
+      "TempleId": 7,
+      "DeityId": 7,
+      "CategoryId": 6,
+      "SevaName": "Sankashtachaturthi Pradhana",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 30,
+      "TempleId": 7,
+      "DeityId": 7,
+      "CategoryId": 5,
+      "SevaName": "Homam Pradhana",
+      "Amount": 1100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 31,
+      "TempleId": 8,
+      "DeityId": 8,
+      "CategoryId": 1,
+      "SevaName": "Abhishekam Pradhana",
+      "Amount": 2500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 32,
+      "TempleId": 8,
+      "DeityId": 8,
+      "CategoryId": 2,
+      "SevaName": "Pradhana Archana",
+      "Amount": 100,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 33,
+      "TempleId": 8,
+      "DeityId": 8,
+      "CategoryId": 4,
+      "SevaName": "Kalyanam Pradhana",
+      "Amount": 5000,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 34,
+      "TempleId": 9,
+      "DeityId": 9,
+      "CategoryId": 1,
+      "SevaName": "Rudhrabhisekam Pradhana",
+      "Amount": 2500,
+      "Description": "",
+      "IsActive": true
+    },
+    {
+      "SevaId": 35,
+      "TempleId": 9,
+      "DeityId": 9,
+      "CategoryId": 2,
+      "SevaName": "Bilvarchana",
+      "Amount": 50,
+      "Description": "",
+      "IsActive": true
+    }
+  ],
+  "counters": [
+    {
+      "CounterId": 1,
+      "CounterName": "Seva Counter 01",
+      "Location": "Main Hall - Counter 1",
+      "IsActive": true,
+      "AssignedUserId": 1,
+      "LocationId": 1
+    },
+    {
+      "CounterId": 2,
+      "CounterName": "Seva Counter 02",
+      "Location": "Main Hall - Counter 2",
+      "IsActive": true,
+      "AssignedUserId": null,
+      "LocationId": 1
+    },
+    {
+      "CounterId": 3,
+      "CounterName": "Laddu Counter 01",
+      "Location": "Prasadam Hall",
+      "IsActive": true,
+      "AssignedUserId": null,
+      "LocationId": 1
+    },
+    {
+      "CounterId": 4,
+      "CounterName": "Goshala Counter 01",
+      "Location": "Goshala Entrance",
+      "IsActive": true,
+      "AssignedUserId": null,
+      "LocationId": 1
+    },
+    {
+      "CounterId": 5,
+      "CounterName": "Tirumala Counter 01",
+      "Location": "Main Queue Complex",
+      "IsActive": true,
+      "AssignedUserId": null,
+      "LocationId": 2
+    },
+    {
+      "CounterId": 6,
+      "CounterName": "Srisailam Counter 01",
+      "Location": "Temple Entrance",
+      "IsActive": true,
+      "AssignedUserId": null,
+      "LocationId": 3
+    }
+  ],
+  "bookingTypes": [
+    {
+      "BookingTypeId": 1,
+      "TypeName": "Seva",
+      "TokenPrefix": "SV",
+      "ScreenKey": "seva_booking",
+      "Description": "Book pooja and seva tickets",
+      "Icon": "Flower2",
+      "UsesSevaMaster": true,
+      "RequiresTemple": true,
+      "RequiresSchedule": true,
+      "RequiresDevotee": true,
+      "CaptureGothram": true,
+      "AllowAdvance": true,
+      "IsActive": true,
+      "IsDefault": true,
+      "DisplayOrder": 1
+    },
+    {
+      "BookingTypeId": 2,
+      "TypeName": "Laddu",
+      "TokenPrefix": "LD",
+      "ScreenKey": "laddu_booking",
+      "Description": "Issue laddu collection token",
+      "Icon": "Package",
+      "UsesSevaMaster": false,
+      "RequiresTemple": false,
+      "RequiresSchedule": false,
+      "RequiresDevotee": true,
+      "CaptureGothram": false,
+      "AllowAdvance": true,
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 2
+    },
+    {
+      "BookingTypeId": 3,
+      "TypeName": "Goshala",
+      "TokenPrefix": "GH",
+      "ScreenKey": "goshala_tickets",
+      "Description": "Ticket and donation entry",
+      "Icon": "Ticket",
+      "UsesSevaMaster": false,
+      "RequiresTemple": false,
+      "RequiresSchedule": false,
+      "RequiresDevotee": true,
+      "CaptureGothram": false,
+      "AllowAdvance": true,
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 3
+    }
+  ],
+  "paymentModes": [
+    {
+      "PaymentModeId": 1,
+      "ModeName": "Cash",
+      "IsActive": true,
+      "IsDefault": true,
+      "DisplayOrder": 1
+    },
+    {
+      "PaymentModeId": 2,
+      "ModeName": "UPI",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 2
+    },
+    {
+      "PaymentModeId": 3,
+      "ModeName": "Pine Labs",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 3
+    }
+  ],
+  "bookingStatuses": [
+    {
+      "BookingStatusId": 1,
+      "StatusName": "Paid",
+      "IsActive": true,
+      "IsDefault": true,
+      "DisplayOrder": 1,
+      "IsCancelled": false
+    },
+    {
+      "BookingStatusId": 2,
+      "StatusName": "Pending",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 2,
+      "IsCancelled": false
+    },
+    {
+      "BookingStatusId": 3,
+      "StatusName": "Cancelled",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 3,
+      "IsCancelled": true
+    },
+    {
+      "BookingStatusId": 4,
+      "StatusName": "Refunded",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 4,
+      "IsCancelled": true
+    }
+  ],
+  "memberFrequencies": [
+    {
+      "FrequencyId": 1,
+      "FrequencyName": "Annual",
+      "IsActive": true,
+      "IsDefault": true,
+      "DisplayOrder": 1
+    },
+    {
+      "FrequencyId": 2,
+      "FrequencyName": "Monthly",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 2
+    },
+    {
+      "FrequencyId": 3,
+      "FrequencyName": "One-time",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 3
+    },
+    {
+      "FrequencyId": 4,
+      "FrequencyName": "Custom",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 4
+    }
+  ],
+  "memberStatuses": [
+    {
+      "MemberStatusId": 1,
+      "StatusName": "Active",
+      "IsActive": true,
+      "IsDefault": true,
+      "DisplayOrder": 1
+    },
+    {
+      "MemberStatusId": 2,
+      "StatusName": "Inactive",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 2
+    },
+    {
+      "MemberStatusId": 3,
+      "StatusName": "Expired",
+      "IsActive": true,
+      "IsDefault": false,
+      "DisplayOrder": 3
+    }
+  ],
+  "timeSlots": [
+    {
+      "SlotId": 1,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "05:00",
+      "SlotLabel": "05:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "SlotId": 2,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "05:30",
+      "SlotLabel": "05:30 AM",
+      "IsActive": true,
+      "DisplayOrder": 2
+    },
+    {
+      "SlotId": 3,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "06:00",
+      "SlotLabel": "06:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 3
+    },
+    {
+      "SlotId": 4,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "06:30",
+      "SlotLabel": "06:30 AM",
+      "IsActive": true,
+      "DisplayOrder": 4
+    },
+    {
+      "SlotId": 5,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "07:00",
+      "SlotLabel": "07:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 5
+    },
+    {
+      "SlotId": 6,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "07:30",
+      "SlotLabel": "07:30 AM",
+      "IsActive": true,
+      "DisplayOrder": 6
+    },
+    {
+      "SlotId": 7,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "08:00",
+      "SlotLabel": "08:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 7
+    },
+    {
+      "SlotId": 8,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "08:30",
+      "SlotLabel": "08:30 AM",
+      "IsActive": true,
+      "DisplayOrder": 8
+    },
+    {
+      "SlotId": 9,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "09:00",
+      "SlotLabel": "09:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 9
+    },
+    {
+      "SlotId": 10,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "09:30",
+      "SlotLabel": "09:30 AM",
+      "IsActive": true,
+      "DisplayOrder": 10
+    },
+    {
+      "SlotId": 11,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "10:00",
+      "SlotLabel": "10:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 11
+    },
+    {
+      "SlotId": 12,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "10:30",
+      "SlotLabel": "10:30 AM",
+      "IsActive": true,
+      "DisplayOrder": 12
+    },
+    {
+      "SlotId": 13,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "11:00",
+      "SlotLabel": "11:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 13
+    },
+    {
+      "SlotId": 14,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "11:30",
+      "SlotLabel": "11:30 AM",
+      "IsActive": true,
+      "DisplayOrder": 14
+    },
+    {
+      "SlotId": 15,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "12:00",
+      "SlotLabel": "12:00 PM",
+      "IsActive": true,
+      "DisplayOrder": 15
+    },
+    {
+      "SlotId": 16,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "16:00",
+      "SlotLabel": "04:00 PM",
+      "IsActive": true,
+      "DisplayOrder": 16
+    },
+    {
+      "SlotId": 17,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "16:30",
+      "SlotLabel": "04:30 PM",
+      "IsActive": true,
+      "DisplayOrder": 17
+    },
+    {
+      "SlotId": 18,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "17:00",
+      "SlotLabel": "05:00 PM",
+      "IsActive": true,
+      "DisplayOrder": 18
+    },
+    {
+      "SlotId": 19,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "17:30",
+      "SlotLabel": "05:30 PM",
+      "IsActive": true,
+      "DisplayOrder": 19
+    },
+    {
+      "SlotId": 20,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "18:00",
+      "SlotLabel": "06:00 PM",
+      "IsActive": true,
+      "DisplayOrder": 20
+    },
+    {
+      "SlotId": 21,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "18:30",
+      "SlotLabel": "06:30 PM",
+      "IsActive": true,
+      "DisplayOrder": 21
+    },
+    {
+      "SlotId": 22,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "19:00",
+      "SlotLabel": "07:00 PM",
+      "IsActive": true,
+      "DisplayOrder": 22
+    },
+    {
+      "SlotId": 23,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "19:30",
+      "SlotLabel": "07:30 PM",
+      "IsActive": true,
+      "DisplayOrder": 23
+    },
+    {
+      "SlotId": 24,
+      "LocationId": null,
+      "TempleId": null,
+      "SlotTime": "20:00",
+      "SlotLabel": "08:00 PM",
+      "IsActive": true,
+      "DisplayOrder": 24
+    },
+    {
+      "SlotId": 25,
+      "LocationId": 3,
+      "TempleId": null,
+      "SlotTime": "04:30",
+      "SlotLabel": "04:30 AM",
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "SlotId": 26,
+      "LocationId": 3,
+      "TempleId": null,
+      "SlotTime": "06:00",
+      "SlotLabel": "06:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 2
+    },
+    {
+      "SlotId": 27,
+      "LocationId": 3,
+      "TempleId": null,
+      "SlotTime": "09:00",
+      "SlotLabel": "09:00 AM",
+      "IsActive": true,
+      "DisplayOrder": 3
+    },
+    {
+      "SlotId": 28,
+      "LocationId": 3,
+      "TempleId": null,
+      "SlotTime": "12:00",
+      "SlotLabel": "12:00 PM",
+      "IsActive": true,
+      "DisplayOrder": 4
+    },
+    {
+      "SlotId": 29,
+      "LocationId": 3,
+      "TempleId": null,
+      "SlotTime": "18:00",
+      "SlotLabel": "06:00 PM",
+      "IsActive": true,
+      "DisplayOrder": 5
+    },
+    {
+      "SlotId": 30,
+      "LocationId": 3,
+      "TempleId": null,
+      "SlotTime": "19:30",
+      "SlotLabel": "07:30 PM",
+      "IsActive": true,
+      "DisplayOrder": 6
+    }
+  ],
+  "members": [
+    {
+      "MemberId": 1,
+      "MemberNumber": "MEM-00001",
+      "MemberName": "Ramesh Kumar",
+      "Mobile": "9876543210",
+      "Email": "ramesh@example.com",
+      "Address": "Hyderabad",
+      "TempleId": 1,
+      "DeityId": 1,
+      "PoojaName": "Abhishekam Pradhana",
+      "NextPoojaDate": "2026-12-15",
+      "Frequency": "Annual",
+      "Status": "Active",
+      "LocationId": 1
+    },
+    {
+      "MemberId": 2,
+      "MemberNumber": "MEM-00002",
+      "MemberName": "Lakshmi Devi",
+      "Mobile": "9123456780",
+      "Email": "lakshmi@example.com",
+      "Address": "Secunderabad",
+      "TempleId": 5,
+      "DeityId": 5,
+      "PoojaName": "Kumkumarchana",
+      "NextPoojaDate": "2026-12-20",
+      "Frequency": "Monthly",
+      "Status": "Active",
+      "LocationId": 1
+    }
+  ],
+  "bookings": [],
+  "items": [
+    {
+      "ItemId": 1,
+      "LocationId": 1,
+      "BookingTypeId": 2,
+      "TempleId": null,
+      "ItemName": "Laddu – Standard",
+      "Amount": 50,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Nos",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 1
+    },
+    {
+      "ItemId": 2,
+      "LocationId": 1,
+      "BookingTypeId": 2,
+      "TempleId": null,
+      "ItemName": "Laddu – Special",
+      "Amount": 200,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Nos",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 2
+    },
+    {
+      "ItemId": 3,
+      "LocationId": 1,
+      "BookingTypeId": 2,
+      "TempleId": null,
+      "ItemName": "Vada Prasadam",
+      "Amount": 30,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Nos",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 3
+    },
+    {
+      "ItemId": 4,
+      "LocationId": 1,
+      "BookingTypeId": 3,
+      "TempleId": null,
+      "ItemName": "Goshala Entry Ticket",
+      "Amount": 20,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Person",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 4
+    },
+    {
+      "ItemId": 5,
+      "LocationId": 1,
+      "BookingTypeId": 3,
+      "TempleId": null,
+      "ItemName": "Goshala Donation",
+      "Amount": 116,
+      "AllowCustomAmount": true,
+      "MinAmount": 10,
+      "Unit": "Donation",
+      "Description": "Devotee may offer any amount",
+      "IsActive": true,
+      "DisplayOrder": 5
+    },
+    {
+      "ItemId": 6,
+      "LocationId": 1,
+      "BookingTypeId": 3,
+      "TempleId": null,
+      "ItemName": "Go Puja",
+      "Amount": 516,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Puja",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 6
+    },
+    {
+      "ItemId": 7,
+      "LocationId": 2,
+      "BookingTypeId": 2,
+      "TempleId": null,
+      "ItemName": "Laddu – Standard",
+      "Amount": 50,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Nos",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 7
+    },
+    {
+      "ItemId": 8,
+      "LocationId": 2,
+      "BookingTypeId": 2,
+      "TempleId": null,
+      "ItemName": "Laddu – Kalyanotsavam",
+      "Amount": 200,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Nos",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 8
+    },
+    {
+      "ItemId": 9,
+      "LocationId": 2,
+      "BookingTypeId": 3,
+      "TempleId": null,
+      "ItemName": "Goshala Entry Ticket",
+      "Amount": 10,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Person",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 9
+    },
+    {
+      "ItemId": 10,
+      "LocationId": 2,
+      "BookingTypeId": 3,
+      "TempleId": null,
+      "ItemName": "Goshala Donation",
+      "Amount": 100,
+      "AllowCustomAmount": true,
+      "MinAmount": 10,
+      "Unit": "Donation",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 10
+    },
+    {
+      "ItemId": 11,
+      "LocationId": 3,
+      "BookingTypeId": 2,
+      "TempleId": null,
+      "ItemName": "Laddu – Standard",
+      "Amount": 40,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Nos",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 11
+    },
+    {
+      "ItemId": 12,
+      "LocationId": 3,
+      "BookingTypeId": 2,
+      "TempleId": null,
+      "ItemName": "Laddu – Special",
+      "Amount": 150,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Nos",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 12
+    },
+    {
+      "ItemId": 13,
+      "LocationId": 3,
+      "BookingTypeId": 3,
+      "TempleId": null,
+      "ItemName": "Goshala Entry Ticket",
+      "Amount": 10,
+      "AllowCustomAmount": false,
+      "MinAmount": 0,
+      "Unit": "Person",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 13
+    },
+    {
+      "ItemId": 14,
+      "LocationId": 3,
+      "BookingTypeId": 3,
+      "TempleId": null,
+      "ItemName": "Goshala Donation",
+      "Amount": 101,
+      "AllowCustomAmount": true,
+      "MinAmount": 10,
+      "Unit": "Donation",
+      "Description": "",
+      "IsActive": true,
+      "DisplayOrder": 14
+    }
+  ]
+}
